@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import { Item, Container, Header, Input, Content, Footer, FooterTab, Button, Right, Icon, Text } from 'native-base'
 
 // Styles
-import styles from './Styles/LaunchScreenStyles'
+import styles from './Styles/HomeScreenStyles'
 
-export default class LaunchScreen extends Component {
+export default class HomeScreen extends Component {
+
   render () {
+    const {navigate} = this.props.navigation;
     return (
       <Container>
         <Header noLeft searchBar rounded
@@ -47,7 +49,8 @@ export default class LaunchScreen extends Component {
               <Icon name="ios-repeat" style={styles.default}/>
               <Text style={styles.default}>Transaksi</Text>
             </Button>
-            <Button>
+            <Button
+            onPress={() => navigate('BlankScreen')}>
               <Icon name="person" style={styles.default}/>
               <Text style={styles.default}>Akun</Text>
             </Button>
